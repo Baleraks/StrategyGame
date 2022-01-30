@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4216013548876011651}
   - component: {fileID: 3295800153156870693}
   - component: {fileID: 3130712038412630767}
-  - component: {fileID: -7677652168979296542}
+  - component: {fileID: -5561419245907695064}
   m_Layer: 0
   m_Name: Mountain
   m_TagString: Mountain
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-7677652168979296542
+--- !u!114 &-5561419245907695064
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,8 +105,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4569017683256880896}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
+  m_Script: {fileID: 11500000, guid: 34ffa24d083c7c54fbc479132d26a4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  changeColorGood: {r: 0.21253115, g: 0.21253115, b: 0.2264151, a: 0}
   money: 6
   costForBuild: 6

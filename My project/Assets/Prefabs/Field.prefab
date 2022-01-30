@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 602216109629576704}
   - component: {fileID: 7133676882618607456}
   - component: {fileID: 7379385485604495323}
-  - component: {fileID: -7387728137882744552}
+  - component: {fileID: 3967441754207120034}
   m_Layer: 0
   m_Name: Field
   m_TagString: Field
@@ -96,7 +96,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-7387728137882744552
+--- !u!114 &3967441754207120034
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,9 +105,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5316898916932699522}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
+  m_Script: {fileID: 11500000, guid: 34ffa24d083c7c54fbc479132d26a4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0.47167328, g: 0.49056602, b: 0.19206122, a: 1}
+  changeColorGood: {r: 0.36137626, g: 0.41509432, b: 0, a: 0}
   money: 5
   costForBuild: 5

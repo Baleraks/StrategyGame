@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class Field : MonoBehaviour
 {
     public Color changeColorGood;
@@ -7,7 +6,7 @@ public class Field : MonoBehaviour
     public int money = 5;
     public int costForBuild = 5;
     private bool isBuild = false;
-    void Start ()
+    void Start()
     {
         mainColor = GetComponent<Renderer>().material.color;
     }
@@ -15,8 +14,10 @@ public class Field : MonoBehaviour
     {
         GetComponent<Renderer>().material.color = changeColorGood;
     }
-    void OnMouseExit() 
+    void OnMouseExit()
     {
         GetComponent<Renderer>().material.color = mainColor;
     }
 }
+
+
