@@ -144,7 +144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4916055735102296099, guid: 3eb4e08dc71d9124980853bf55373d6d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.34
+      value: -11.96
       objectReference: {fileID: 0}
     - target: {fileID: 4916055735102296099, guid: 3eb4e08dc71d9124980853bf55373d6d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -288,9 +288,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1001 &277001006
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -361,7 +358,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4916055735102296099, guid: 3eb4e08dc71d9124980853bf55373d6d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.26
+      value: 3.12
       objectReference: {fileID: 0}
     - target: {fileID: 4916055735102296099, guid: 3eb4e08dc71d9124980853bf55373d6d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -369,7 +366,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4916055735102296099, guid: 3eb4e08dc71d9124980853bf55373d6d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.88
+      value: -14.42
       objectReference: {fileID: 0}
     - target: {fileID: 4916055735102296099, guid: 3eb4e08dc71d9124980853bf55373d6d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -513,9 +510,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1001 &454231285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -537,7 +531,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4916055735102296099, guid: 3eb4e08dc71d9124980853bf55373d6d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.34
+      value: -11.95
       objectReference: {fileID: 0}
     - target: {fileID: 4916055735102296099, guid: 3eb4e08dc71d9124980853bf55373d6d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -681,9 +675,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1 &603332587
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,9 +783,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1 &646120252 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8082428900177239843, guid: 5d6871ea6aa161c44b76ea41f4f3868c, type: 3}
@@ -812,9 +800,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1 &655521698
 GameObject:
   m_ObjectHideFlags: 0
@@ -923,9 +908,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1127,9 +1109,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1001 &790935632
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1295,9 +1274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,9 +1465,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1 &987141294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,9 +1573,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1 &1050659522
 GameObject:
   m_ObjectHideFlags: 0
@@ -1711,9 +1681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1 &1090303863 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4569017683256880896, guid: 871f3db347b56f74f88bb35a76d5eeb8, type: 3}
@@ -1731,9 +1698,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1 &1099841774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1842,9 +1806,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1 &1104534734
 GameObject:
   m_ObjectHideFlags: 0
@@ -1953,9 +1914,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1 &1275449588
 GameObject:
   m_ObjectHideFlags: 0
@@ -2112,9 +2070,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1 &1456739652 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7165776191007120205, guid: bef4d0eca373cc3458ccdea98b5335f8, type: 3}
@@ -2132,9 +2087,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1 &1492014540
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,9 +2195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1 &1717635958
 GameObject:
   m_ObjectHideFlags: 0
@@ -2354,9 +2303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b4509db37cfc794d8aff8520f6f8fcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0, g: 0, b: 0, a: 0}
-  money: 5
-  costForBuild: 5
 --- !u!1001 &1753567120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2378,7 +2324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4916055735102296099, guid: 3eb4e08dc71d9124980853bf55373d6d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.52
+      value: -9.38
       objectReference: {fileID: 0}
     - target: {fileID: 4916055735102296099, guid: 3eb4e08dc71d9124980853bf55373d6d, type: 3}
       propertyPath: m_LocalRotation.w
