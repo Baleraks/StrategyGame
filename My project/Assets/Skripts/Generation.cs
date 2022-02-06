@@ -22,6 +22,6 @@ public class Generation : MonoBehaviour
             pointToSpawn -= new Vector3(2.25f*5, 0.0f, 0.0f);
             pointToSpawn += new Vector3(0.0f, 0.0f, 2.25f);
         }
-        Instantiate(castle, new Vector3((2.25f*2)+0.2f,1.0f, (2.25f*2)-0.3f), new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
+        Instantiate(castle, new Vector3(2.25f*2,0.5f, 2.25f*2), new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
     }
 }
