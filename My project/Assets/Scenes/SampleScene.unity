@@ -363,7 +363,7 @@ MonoBehaviour:
   - {fileID: 7165776191007120205, guid: bef4d0eca373cc3458ccdea98b5335f8, type: 3}
   - {fileID: 8082428900177239843, guid: 5d6871ea6aa161c44b76ea41f4f3868c, type: 3}
   - {fileID: 4569017683256880896, guid: 871f3db347b56f74f88bb35a76d5eeb8, type: 3}
-  castle: {fileID: 8069295981132987105, guid: 9f8035e39b12af449bc85fd0507176a9, type: 3}
+  castle: {fileID: 7532038294446082750, guid: 67a72cc1d2d11dd478f74d152e23ec03, type: 3}
 --- !u!4 &1537771443
 Transform:
   m_ObjectHideFlags: 0
