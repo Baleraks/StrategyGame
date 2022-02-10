@@ -1,18 +1,50 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildeManager : MonoBehaviour
+public class BuildManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static BuildManager instance;
+    private BuildingInfo BuildingToBuild;
+    private Field selectedFielde;
+    public bool canBuild { get { return BuildingToBuild != null; } }
+    public bool enoughMoney { get { return PlayerStats.money >= BuildingToBuild.cost; } }
+    //public NodeUI nodeUI;
+    public string[] tags = { "StandartBuilding", "Tower", "road" };
+
+    public BuildingInfo GetTurretToBuild()
     {
-        
+        return BuildingToBuild;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        if (instance != null)
+        {
+            Debug.LogError("More than one BuildManager in scene!");
+        }
+        instance = this;
+    }
+
+    public void SelectNode(Field fielde)
+    {
+        if (selectedFielde == fielde)
+        {
+            DiselectNode();
+            return;
+        }
+        selectedFielde = fielde;
+        BuildingToBuild = null;
+        //nodeUI.SetTarget(node);
+    }
+
+    public void DiselectNode()
+    {
+        selectedFielde = null;
+        //nodeUI.Hide();
+    }
+
+    public void SelectTurretToBuild(BuildingInfo building)
+    {
+        BuildingToBuild = building;
+        DiselectNode();
     }
 }
