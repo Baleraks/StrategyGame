@@ -108,6 +108,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ffa24d083c7c54fbc479132d26a4bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeColorGood: {r: 0.21253115, g: 0.21253115, b: 0.2264151, a: 0}
+  changeColorGood: {r: 0.008143486, g: 0.008143486, b: 0.009433985, a: 0}
   money: 6
   costForBuild: 6
