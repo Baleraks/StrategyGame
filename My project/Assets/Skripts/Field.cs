@@ -12,6 +12,9 @@ public class Field : MonoBehaviour
     BuildManager buildManager;
     public BuildingInfo buildingInfo;
     public bool isUpgrated = false;
+    public PlayerStats playerStats;
+
+
     public Vector3 GetBuildPosition()
     {
         return transform.position + positionOffset;
@@ -29,7 +32,7 @@ public class Field : MonoBehaviour
 
     void BuildBuilding(BuildingInfo info)
     {
-        if (PlayerStats.money < info.cost)
+        if (playerStats.money < info.cost)
         {
             Debug.Log("NOT ENOUGH OXYGEN");
             return;
@@ -37,7 +40,7 @@ public class Field : MonoBehaviour
         GameObject turret = (GameObject)Instantiate(info.prefarb, GetBuildPosition(), transform.rotation);
         this.turret = turret;
         buildingInfo = info;
-        PlayerStats.money -= info.cost;
+        playerStats.money -= info.cost;
     }
 
     void OnMouseExit()

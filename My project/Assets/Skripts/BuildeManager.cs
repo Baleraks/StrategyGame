@@ -5,9 +5,10 @@ public class BuildManager : MonoBehaviour
     public static BuildManager instance;
     private BuildingInfo BuildingToBuild;
     private Field selectedFielde;
+    public PlayerStats playerStats;
+
     public bool canBuild { get { return BuildingToBuild != null; } }
-    public bool enoughMoney { get { return PlayerStats.money >= BuildingToBuild.cost; } }
-    //public NodeUI nodeUI;
+    public bool enoughMoney { get { return playerStats.money >= BuildingToBuild.cost; } }
     public string[] tags = { "StandartBuilding", "Tower", "road" };
 
     public BuildingInfo GetTurretToBuild()

@@ -1,13 +1,14 @@
 using UnityEngine.UI;
 using UnityEngine;
 
-public class MoneyUI : MonoBehaviour
+public class ScoreUI : MonoBehaviour
 {
-    public Text money;
+    public Text score;
     public PlayerStats playerStats;
+
 
     void Update()
     {
-        money.text = playerStats.money.ToString();
+        score.text = playerStats.score.ToString();
     }
 }
