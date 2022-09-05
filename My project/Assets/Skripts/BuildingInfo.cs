@@ -1,10 +1,8 @@
 using UnityEngine;
 
 [System.Serializable]
-
-public class BuildingInfo : MonoBehaviour
+public class BuildingInfo
 {
     public GameObject prefarb;
     public int cost;
-    public int sellCost;
 }

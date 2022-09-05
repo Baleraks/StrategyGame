@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     public void EndTurn()
     {
-        if (playerStats.scoreFactor<=0)
+        if (playerStats.scoreFactor <= 0)
         {
             GameOver();
         }

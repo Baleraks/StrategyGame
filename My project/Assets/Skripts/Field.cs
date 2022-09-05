@@ -12,35 +12,36 @@ public class Field : MonoBehaviour
     BuildManager buildManager;
     public BuildingInfo buildingInfo;
     public bool isUpgrated = false;
-    public PlayerStats playerStats;
 
 
     public Vector3 GetBuildPosition()
     {
         return transform.position + positionOffset;
     }
+
     void Start()
     {
         rend = GetComponent<Renderer>();
         mainColor = rend.material.color;
         buildManager = BuildManager.instance;
     }
+
     void OnMouseEnter()
     {
         GetComponent<Renderer>().material.color = changeColorGood;
     }
 
-    void BuildBuilding(BuildingInfo info)
+    public void BuildBuilding(BuildingInfo info)
     {
-        if (playerStats.money < info.cost)
+        if (PlayerStats.money < info.cost)
         {
-            Debug.Log("NOT ENOUGH OXYGEN");
+            Debug.Log("NOT ENOUGH MONEY");
             return;
         }
         GameObject turret = (GameObject)Instantiate(info.prefarb, GetBuildPosition(), transform.rotation);
         this.turret = turret;
         buildingInfo = info;
-        playerStats.money -= info.cost;
+        PlayerStats.money -= info.cost;
     }
 
     void OnMouseExit()

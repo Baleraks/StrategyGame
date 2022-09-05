@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BuildManager : MonoBehaviour
@@ -5,11 +7,10 @@ public class BuildManager : MonoBehaviour
     public static BuildManager instance;
     private BuildingInfo BuildingToBuild;
     private Field selectedFielde;
-    public PlayerStats playerStats;
 
     public bool canBuild { get { return BuildingToBuild != null; } }
-    public bool enoughMoney { get { return playerStats.money >= BuildingToBuild.cost; } }
-    public string[] tags = { "StandartBuilding", "Tower", "road" };
+    public bool enoughMoney { get { return PlayerStats.money >= BuildingToBuild.cost; } }
+    public string[] tags = { "StandartBuilding", "Tower", "road", "Castle" };
 
     public BuildingInfo GetTurretToBuild()
     {
@@ -49,3 +50,5 @@ public class BuildManager : MonoBehaviour
         DiselectNode();
     }
 }
+
+

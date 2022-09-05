@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public GameObject Object;
-    public int money;
+    public static int money;
     public int score;
     public int startMoney;
     public double buildFactor;

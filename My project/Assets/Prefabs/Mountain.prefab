@@ -109,5 +109,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeColorGood: {r: 0.008143486, g: 0.008143486, b: 0.009433985, a: 0}
-  money: 6
-  costForBuild: 6
+  turret: {fileID: 0}
+  positionOffset: {x: 0, y: 0.5, z: 0}
+  buildingInfo:
+    prefarb: {fileID: 0}
+    cost: 0
+  isUpgrated: 0
