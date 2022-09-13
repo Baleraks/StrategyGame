@@ -9,7 +9,7 @@ public class PlayerStats : MonoBehaviour
     public int score;
     public int startMoney;
     public double buildFactor;
-    public int scoreFactor;
+    public static int scoreFactor;
 
     private void Start()
     {

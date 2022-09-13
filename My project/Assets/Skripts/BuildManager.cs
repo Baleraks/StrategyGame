@@ -5,12 +5,12 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     public static BuildManager instance;
-    private BuildingInfo BuildingToBuild;
-    private Field selectedFielde;
+    [SerializeField] private BuildingInfo BuildingToBuild;
+    [SerializeField] private Field selectedFielde;
 
     public bool canBuild { get { return BuildingToBuild != null; } }
+    
     public bool enoughMoney { get { return PlayerStats.money >= BuildingToBuild.cost; } }
-    public string[] tags = { "StandartBuilding", "Tower", "road", "Castle" };
 
     public BuildingInfo GetTurretToBuild()
     {
@@ -34,8 +34,13 @@ public class BuildManager : MonoBehaviour
             return;
         }
         selectedFielde = fielde;
-        BuildingToBuild = null;
+        ClearInfo();
         //nodeUI.SetTarget(node);
+    }
+
+    public void ClearInfo()
+    {
+        BuildingToBuild = null;
     }
 
     public void DiselectNode()
