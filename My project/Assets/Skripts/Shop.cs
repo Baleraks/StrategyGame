@@ -15,8 +15,8 @@ public class Shop : MonoBehaviour
         buildManager.SelectTurretToBuild(standardBuilding);
     }
 
-    public void SelectRoad()
-    {
-        buildManager.SelectTurretToBuild(Road);
-    }
+    //public void SelectRoad()
+    //{
+    //    buildManager.SelectTurretToBuild(Road);
+    //}
 }

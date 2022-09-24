@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 316da67ff8222c043a73d261911804f7, type: 2}
+  - {fileID: 2100000, guid: 1b5f0f47f6782fe4d820622644487acb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   turret: {fileID: 0}
   positionOffset: {x: 0, y: 0.5, z: 0}
   buildingInfo:
-    prefarb: {fileID: 0}
+    prefarb:
+    - {fileID: 0}
     cost: 0
   isUpgrated: 0

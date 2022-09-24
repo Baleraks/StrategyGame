@@ -14,11 +14,13 @@ public class GameManager : MonoBehaviour
 
     public void EndTurn()
     {
+        
         if (PlayerStats.scoreFactor <= 0)
         {
             GameOver();
         }
-    }
+       
+    } 
 
 
 }
