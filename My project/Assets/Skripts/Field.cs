@@ -45,6 +45,7 @@ public class Field : MonoBehaviour
         }
         BuildBuilding(buildManager.GetTurretToBuild());
         PlayerStats.scoreFactor++;
+        PlayerStats.buildNumber++;
     }
 
     private void BuildBuilding(BuildingInfo info)
@@ -59,38 +60,31 @@ public class Field : MonoBehaviour
         {
             case "Field":
                 {
-                    info.cost = 1;
                     prefSelect = 0;
-                    PlayerStats.score += 2;
                     break;
                 }            
             case "Lake":
                 {
-                    info.cost = 2;
                     prefSelect = 1;
-                    PlayerStats.score += 3;
                     break;
                 }
             case "Grass":
                 {
-                    info.cost = 3;
                     prefSelect = 2;
-                    PlayerStats.score += 3;
                     break;
                 }
             case "Mountain":
                 {
-                    info.cost = 4;
                     prefSelect = 3;
-                    PlayerStats.score += 4;
                     break;
                 }
         }
         GameObject turret = (GameObject)Instantiate(info.prefarb[prefSelect], GetBuildPosition(), transform.rotation);
         this.turret = turret;
         buildingInfo = info;
+        PlayerStats.score += info.score * PlayerStats.scoreFactor;
         PlayerStats.money -= info.cost;
-        info.cost = 0;
+
     }
 
     void OnMouseExit()

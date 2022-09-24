@@ -15,10 +15,12 @@ public class GameManager : MonoBehaviour
     public void EndTurn()
     {
         
-        if (PlayerStats.scoreFactor <= 0)
+        if (PlayerStats.scoreFactor <= 1)
         {
             GameOver();
         }
+        PlayerStats.scoreFactor = 1;
+        PlayerStats.money = PlayerStats.money + 2 * PlayerStats.buildNumber;
        
     } 
 

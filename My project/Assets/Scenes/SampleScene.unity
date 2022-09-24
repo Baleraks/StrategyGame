@@ -209,10 +209,12 @@ MonoBehaviour:
     - {fileID: 7532038294446082750, guid: 67a72cc1d2d11dd478f74d152e23ec03, type: 3}
     - {fileID: 6706483720002028869, guid: db74c2b5f73cea246ac14e04e25b65d6, type: 3}
     - {fileID: 5221884502141525455, guid: 0fba98f6c07960e4bb1a1f4e8b372305, type: 3}
-    cost: 0
+    cost: 2
+    score: 3
   Road:
     prefarb: []
     cost: 0
+    score: 0
 --- !u!114 &74910749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,9 +310,9 @@ RectTransform:
   m_Father: {fileID: 74910746}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 74.84045, y: -101.7208}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 149.6809, y: 202.0906}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &92153856
@@ -441,9 +443,9 @@ RectTransform:
   m_Father: {fileID: 74910746}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 154.6809, y: -202.40466}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 157.5631, y: 201.3677}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &123980720
@@ -1858,6 +1860,7 @@ MonoBehaviour:
     prefarb:
     - {fileID: 8069295981132987105, guid: 9f8035e39b12af449bc85fd0507176a9, type: 3}
     cost: 0
+    score: 0
 --- !u!4 &1537771443
 Transform:
   m_ObjectHideFlags: 0
@@ -1916,6 +1919,7 @@ MonoBehaviour:
   BuildingToBuild:
     prefarb: []
     cost: 0
+    score: 0
   selectedFielde: {fileID: 0}
 --- !u!1 &1602938454
 GameObject:
