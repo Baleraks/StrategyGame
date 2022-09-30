@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
-    public GameObject Object;
     public static int money;
     public static int score;
     public int startMoney;
     //множитель деняг
-    public float buildFactor;
+    public static float buildFactor;
     //количество зданий
     public static int buildNumber;
     //количество связей здание -> дорога -> замок

@@ -50,7 +50,7 @@ public class Field : MonoBehaviour
 
     private void BuildBuilding(BuildingInfo info)
     {
-        if (PlayerStats.money <= info.cost)
+        if (!buildManager.enoughMoney)
         {
             Debug.Log("NOT ENOUGH MONEY");
             return;

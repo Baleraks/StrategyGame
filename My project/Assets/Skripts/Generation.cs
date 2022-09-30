@@ -10,11 +10,10 @@ public class Generation : MonoBehaviour
     private int edgeX = -2;
     private int edgeZ = -2;
     private int fieldeSize = 5;
-    private float fieldeMultiplier = 2.25f;
+    private float fieldeMultiplier = 2.0f;
     private System.Random rand = new System.Random();
     private Field startField;
     private BuildManager buildManager;
-    //private BuildingInfo castle;
 
     void Start()
     {

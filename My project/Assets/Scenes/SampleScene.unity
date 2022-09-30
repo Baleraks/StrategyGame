@@ -209,7 +209,7 @@ MonoBehaviour:
     - {fileID: 7532038294446082750, guid: 67a72cc1d2d11dd478f74d152e23ec03, type: 3}
     - {fileID: 6706483720002028869, guid: db74c2b5f73cea246ac14e04e25b65d6, type: 3}
     - {fileID: 5221884502141525455, guid: 0fba98f6c07960e4bb1a1f4e8b372305, type: 3}
-    cost: 2
+    cost: 5
     score: 3
   Road:
     prefarb: []
@@ -1888,7 +1888,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverText: {fileID: 1450354469}
-  playerStats: {fileID: 1537771445}
+  turnNum: 0
+  costMultiplier: 0.25
+  moneyMultiplier: 4
+  shop: {fileID: 74910748}
 --- !u!114 &1537771445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1902,8 +1905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Object: {fileID: 0}
-  startMoney: 5
-  buildFactor: 0
+  startMoney: 10
 --- !u!114 &1537771446
 MonoBehaviour:
   m_ObjectHideFlags: 0
