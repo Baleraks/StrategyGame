@@ -3,8 +3,7 @@ public class Field : MonoBehaviour
 {
     public Color changeColorGood;
     private Color mainColor;
-    //public int money = 5;
-    //public int costForBuild = 5;
+    public Map.state building;
     private Renderer rend;
     private string tag;
     public GameObject turret;
@@ -12,8 +11,7 @@ public class Field : MonoBehaviour
     BuildManager buildManager;
     public BuildingInfo buildingInfo;
     public PlayerStats playerStats;
-    public bool isUpgrated = false;
-    
+    public bool isUpgrated = false;    
 
     public Vector3 GetBuildPosition()
     {
@@ -44,8 +42,6 @@ public class Field : MonoBehaviour
             return;
         }
         BuildBuilding(buildManager.GetTurretToBuild());
-        PlayerStats.scoreFactor++;
-        PlayerStats.buildNumber++;
     }
 
     private void BuildBuilding(BuildingInfo info)
@@ -56,13 +52,31 @@ public class Field : MonoBehaviour
             return;
         }
         int prefSelect = 0;
+        if(info.name == Map.state.build)
+        {
+            prefSelect = BuildingSelect();
+            PlayerStats.buildNumber++;
+            PlayerStats.scoreFactor++;
+        }
+        PlayerStats.roadNumber++;
+        GameObject turret = (GameObject)Instantiate(info.prefarb[prefSelect], GetBuildPosition(), transform.rotation);
+        this.turret = turret;
+        buildingInfo = info;
+        building = info.name;
+        PlayerStats.score += info.score * PlayerStats.scoreFactor;
+        PlayerStats.money -= info.cost;
+    }
+
+    private int BuildingSelect()
+    {
+        int prefSelect = 0;
         switch (tag)
         {
             case "Field":
                 {
                     prefSelect = 0;
                     break;
-                }            
+                }
             case "Lake":
                 {
                     prefSelect = 1;
@@ -79,14 +93,8 @@ public class Field : MonoBehaviour
                     break;
                 }
         }
-        GameObject turret = (GameObject)Instantiate(info.prefarb[prefSelect], GetBuildPosition(), transform.rotation);
-        this.turret = turret;
-        buildingInfo = info;
-        PlayerStats.score += info.score * PlayerStats.scoreFactor;
-        PlayerStats.money -= info.cost;
-
+        return prefSelect;
     }
-
     void OnMouseExit()
     {
         GetComponent<Renderer>().material.color = mainColor;
