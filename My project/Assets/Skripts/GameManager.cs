@@ -4,11 +4,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject gameOverText;
-    [SerializeField] private int turnNum; 
+    [SerializeField] private int turnNum=1;
+    [SerializeField] private int eventNum = 0;
     [SerializeField] private float costMultiplier;
-    [SerializeField] private int moneyMultiplier;
+    [SerializeField] public int moneyMultiplier;
     [SerializeField] private Shop shop;
     [SerializeField] private MapManager mapManager;
+    public GameObject eventUI;
+    public GameObject quest;
 
     public void GameOver()
     {
@@ -17,7 +20,16 @@ public class GameManager : MonoBehaviour
 
     public void EndTurn()
     {
-        turnNum++;        
+        
+        turnNum++;
+        
+        if(turnNum >= 5 && PlayerStats.buildNumber >= 10 && PlayerStats.scoreFactor !=1)
+        {
+            eventUI.SetActive(true);
+            turnNum = 0;
+            eventNum++;
+            quest.SetActive(false);
+        }
         int size = mapManager.Fields.GetLength(1);
         mapManager.used = new bool[size, size];
         PlayerStats.conectNumber = mapManager.Bfs((size / 2 + 1, size / 2)) + mapManager.Bfs((size / 2 - 1, size / 2)) 
