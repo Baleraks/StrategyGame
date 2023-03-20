@@ -8,10 +8,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int eventNum = 0;
     [SerializeField] private float costMultiplier;
     [SerializeField] public int moneyMultiplier;
+    [SerializeField] public int eventBuildCount=0;
+    [SerializeField] public int eventRoadCount = 0;
     [SerializeField] private Shop shop;
     [SerializeField] private MapManager mapManager;
     public GameObject eventUI;
     public GameObject quest;
+    public GameObject questItem;
 
     public void GameOver()
     {
@@ -20,16 +23,45 @@ public class GameManager : MonoBehaviour
 
     public void EndTurn()
     {
-        
         turnNum++;
-        
-        if(turnNum >= 5 && PlayerStats.buildNumber >= 10 && PlayerStats.scoreFactor !=1)
+        eventBuildCount = PlayerStats.buildNumber;
+        eventRoadCount = PlayerStats.conectNumber;
+
+        if(turnNum == 5 && eventBuildCount >= 10 && PlayerStats.scoreFactor !=1 && eventRoadCount <= 5)
         {
             eventUI.SetActive(true);
             turnNum = 0;
             eventNum++;
-            quest.SetActive(false);
+            eventBuildCount = 0;
+            eventRoadCount = 0;
         }
+
+        if(questItem.activeSelf == true)
+        {
+            if(turnNum==5 && eventRoadCount>=5)
+            {
+                questItem.SetActive(false);
+                PlayerStats.money += 10000;
+                turnNum = 0;
+            }
+            else if(turnNum == 5 && eventRoadCount < 5 )
+            {
+                questItem.SetActive(false);
+                PlayerStats.money -= 5000;
+                turnNum = 0;
+            }
+        }
+
+        if (quest.activeSelf == true)
+        {
+            if (turnNum == 5 )
+            {
+                quest.SetActive(false);
+                PlayerStats.money -= 10000;
+                turnNum = 0;
+            }
+        }
+
         int size = mapManager.Fields.GetLength(1);
         mapManager.used = new bool[size, size];
         PlayerStats.conectNumber = mapManager.Bfs((size / 2 + 1, size / 2)) + mapManager.Bfs((size / 2 - 1, size / 2)) 

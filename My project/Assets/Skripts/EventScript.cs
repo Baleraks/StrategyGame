@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class EventScript : MonoBehaviour
 {
-    public Text questText;
+   
     public  GameObject ui;
 
     public void Good()

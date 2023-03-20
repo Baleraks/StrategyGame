@@ -7,10 +7,12 @@ public class Event : MonoBehaviour
 {
     public GameObject quest;
     public  GameObject ui;
+    public GameObject questItem;
 
     public void Good()
     {
         ui.SetActive(false);
+        questItem.SetActive(true);
     }
 
     public  void Bad()
