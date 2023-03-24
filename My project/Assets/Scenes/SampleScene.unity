@@ -1644,7 +1644,6 @@ RectTransform:
   - {fileID: 74910746}
   - {fileID: 455987400}
   - {fileID: 682562256}
-  - {fileID: 1537771443}
   - {fileID: 1703121636}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -2459,11 +2458,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537771441}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -492.0089, y: -312.66113, z: -11.926647}
+  m_LocalPosition: {x: 467.9911, y: 227.33887, z: -11.926647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 778017211}
-  m_RootOrder: 9
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1537771444
 MonoBehaviour:
@@ -2480,7 +2479,7 @@ MonoBehaviour:
   gameOverText: {fileID: 1450354469}
   turnNum: 0
   eventNum: 0
-  costMultiplier: 0.25
+  costMultiplier: 0.01
   moneyMultiplier: 4
   eventBuildCount: 0
   eventRoadCount: 0
@@ -2501,7 +2500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b43322b048f7742a1449040a6fb8cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 10000
+  startMoney: 1000000
 --- !u!114 &1537771446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2922,7 +2921,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 778017211}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

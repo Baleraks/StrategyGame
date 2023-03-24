@@ -23,6 +23,7 @@ public class Generation : MonoBehaviour
         int indexToSpawn;
         var indexX = edgeX;
         var indexZ = edgeZ;
+        Field fieldFromField;
         Vector3 pointToSpawn = new Vector3(indexX * fieldeMultiplier, 0.0f, indexZ * fieldeMultiplier);
         for (int i = 0; i < fieldeSize; i++)
         {
@@ -41,6 +42,7 @@ public class Generation : MonoBehaviour
                 }
                 indexX++;
                 pointToSpawn = new Vector3(indexX * fieldeMultiplier, 0.0f, indexZ * fieldeMultiplier);
+                mapManager.Fields[i, j].GetComponent<Field>().mapPosition = (i,j);
             }
             indexX = edgeX;
             indexZ++;
@@ -80,6 +82,7 @@ public class Generation : MonoBehaviour
                     pointToSpawn = new Vector3(indexX * fieldeMultiplier, 0.0f, indexZ * fieldeMultiplier);
                     buf[i, j] = mapManager.Fields[i - 1, j - 1];
                 }
+                buf[i, j].GetComponent<Field>().mapPosition = (i, j);
             }
             indexX = edgeX;
             indexZ++;

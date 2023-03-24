@@ -11,7 +11,8 @@ public class Field : MonoBehaviour
     BuildManager buildManager;
     public BuildingInfo buildingInfo;
     public PlayerStats playerStats;
-    public bool isUpgrated = false;    
+    public bool isUpgrated = false;
+    public (int x, int y) mapPosition;
 
     public Vector3 GetBuildPosition()
     {

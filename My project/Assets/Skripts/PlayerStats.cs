@@ -8,7 +8,7 @@ public class PlayerStats : MonoBehaviour
     public static int score;
     public int startMoney;
     //множитель деняг
-    public static float buildFactor;
+    [SerializeField] public static float buildFactor;
     //количество зданий
     public static int buildNumber;
     //количество дорог
