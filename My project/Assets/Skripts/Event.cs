@@ -7,8 +7,9 @@ public class Event : MonoBehaviour
 {
     public GameObject quest;
     public  GameObject ui;
+    public GameObject uiHouse;
     public GameObject questItem;
-
+    public GameObject questHouse;
     public void Good()
     {
         ui.SetActive(false);
@@ -20,5 +21,11 @@ public class Event : MonoBehaviour
         ui.SetActive(false);
         quest.SetActive(true);
        
+    }
+
+    public void House()
+    {
+        uiHouse.SetActive(false);
+        questHouse.SetActive(true);
     }
 }
