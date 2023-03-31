@@ -1,12 +1,12 @@
+using System.Drawing;
 using UnityEngine;
 public class Field : MonoBehaviour
 {
-    public Color changeColorGood;
-    private Color mainColor;
+    public UnityEngine.Color changeColorGood;
+    private UnityEngine.Color mainColor;
     public Map.state building;
     private Renderer rend;
-    private string tag;
-    public GameObject turret;
+    public GameObject Prefab;
     public Vector3 positionOffset;
     BuildManager buildManager;
     public BuildingInfo buildingInfo;
@@ -38,7 +38,7 @@ public class Field : MonoBehaviour
 
     void OnMouseDown()
     {
-        if (!buildManager.canBuild || buildingInfo.prefarb[0] != null)
+        if (!buildManager.canBuild || buildingInfo.Object != null)
         {
             return;
         }
@@ -52,50 +52,21 @@ public class Field : MonoBehaviour
             Debug.Log("NOT ENOUGH MONEY");
             return;
         }
-        int prefSelect = 0;
-        if(info.name == Map.state.build)
-        {
-            prefSelect = BuildingSelect();
-            PlayerStats.buildNumber++;
-            PlayerStats.scoreFactor++;
-        }
-        PlayerStats.roadNumber++;
-        GameObject turret = (GameObject)Instantiate(info.prefarb[prefSelect], GetBuildPosition(), transform.rotation);
-        this.turret = turret;
-        buildingInfo = info;
-        building = info.name;
+        PlayerStats.scoreFactor++;
+        SetBuilding(info);
+        info.Object.NeighboursUpdait(transform.GetComponent<Field>());
         PlayerStats.score += info.score * PlayerStats.scoreFactor;
         PlayerStats.money -= info.cost;
     }
 
-    private int BuildingSelect()
+    public void SetBuilding(BuildingInfo info)
     {
-        int prefSelect = 0;
-        switch (tag)
-        {
-            case "Field":
-                {
-                    prefSelect = 0;
-                    break;
-                }
-            case "Lake":
-                {
-                    prefSelect = 1;
-                    break;
-                }
-            case "Grass":
-                {
-                    prefSelect = 2;
-                    break;
-                }
-            case "Mountain":
-                {
-                    prefSelect = 3;
-                    break;
-                }
-        }
-        return prefSelect;
+        GameObject Prefab = (GameObject)Instantiate(info.Object.SelfIndification(transform.GetComponent<Field>()), GetBuildPosition(), info.Object.GetRotation());
+        this.Prefab = Prefab;
+        buildingInfo = info;
+        this.building = info.name;
     }
+
     void OnMouseExit()
     {
         GetComponent<Renderer>().material.color = mainColor;

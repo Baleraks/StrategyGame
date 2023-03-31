@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int eventRoadCount = 0;
     [SerializeField] private Shop shop;
     [SerializeField] private MapManager mapManager;
+    [SerializeField] private BuildManager buildManager;   
     public GameObject eventUINoRoads;
     public GameObject eventUINoHouses;
     public GameObject quest;
@@ -20,7 +21,8 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverText.active = true;
+        buildManager.ClearInfo();
+        gameOverText.SetActive(true);
     }
 
     public void EndTurn()

@@ -6,7 +6,7 @@ using UnityEngine;
 public class Generation : MonoBehaviour
 {
     [SerializeField] private GameObject[] objects;
-    [SerializeField] private BuildingInfo castle;
+    [SerializeField] private GameObject castle;
     [SerializeField] private MapManager mapManager;
     private int edgeX = -2;
     private int edgeZ = -2;
@@ -23,7 +23,6 @@ public class Generation : MonoBehaviour
         int indexToSpawn;
         var indexX = edgeX;
         var indexZ = edgeZ;
-        Field fieldFromField;
         Vector3 pointToSpawn = new Vector3(indexX * fieldeMultiplier, 0.0f, indexZ * fieldeMultiplier);
         for (int i = 0; i < fieldeSize; i++)
         {
@@ -48,9 +47,8 @@ public class Generation : MonoBehaviour
             indexZ++;
             pointToSpawn = new Vector3(indexX * fieldeMultiplier, 0.0f, indexZ * fieldeMultiplier);
         }
-        GameObject building = (GameObject)Instantiate(castle.prefarb[0], new Vector3(0, 0.5f, 0), new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
-        startField.turret = building;
-        startField.buildingInfo = castle;
+        GameObject building = (GameObject)Instantiate(castle, new Vector3(0, 0.5f, 0), new Quaternion(0.0f, 0.0f, 0.0f, 0.0f));
+        startField.Prefab = building;
         startField.building = Map.state.castle;
         buildManager.ClearInfo();     
         edgeX--; edgeZ--; fieldeSize += 2;

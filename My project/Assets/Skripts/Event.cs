@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Event : MonoBehaviour
 {
     public GameObject quest;
-    public  GameObject ui;
+    public GameObject ui;
     public GameObject uiHouse;
     public GameObject questItem;
     public GameObject questHouse;

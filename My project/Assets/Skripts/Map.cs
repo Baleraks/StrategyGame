@@ -12,5 +12,13 @@ public static class Map
         castle
     }
 
+    public enum position
+    {
+        down,
+        up,
+        left,
+        right
+    }
+
 
 }
