@@ -87,6 +87,7 @@ public class Generation : MonoBehaviour
             pointToSpawn = new Vector3(indexX * fieldeMultiplier, 0.0f, indexZ * fieldeMultiplier);
         }
         mapManager.Fields = buf;
+        MapManager.Size = buf.GetLength(1);
         edgeX--; edgeZ--; fieldeSize += 2 ;
     }
 }
