@@ -4161,8 +4161,8 @@ MonoBehaviour:
   gameObjects:
   - {fileID: 6706483720002028869, guid: db74c2b5f73cea246ac14e04e25b65d6, type: 3}
   - {fileID: 7532038294446082750, guid: 67a72cc1d2d11dd478f74d152e23ec03, type: 3}
-  - {fileID: 8175776388544930474, guid: 5dab134d7d414ad4fa619ff6c0b3f3de, type: 3}
-  - {fileID: 8069295981132987105, guid: 9f8035e39b12af449bc85fd0507176a9, type: 3}
+  - {fileID: 2187377087695358092, guid: 877fd69e590267646865e07f25bd9992, type: 3}
+  - {fileID: 8412655243917912117, guid: e3f77434ffc9388449bd77e35ae802d6, type: 3}
   mapManager: {fileID: 1751269887}
   Neighbours: []
 --- !u!224 &1744177875
