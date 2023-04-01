@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject gameOverText;
+    [SerializeField] public GameObject gameOverUI;
     [SerializeField] private int turnNum=1;
-    [SerializeField] private int eventNum = 0;
+    [SerializeField] private int eventIsActive = 0;
     [SerializeField] private float costMultiplier;
     [SerializeField] public int moneyMultiplier;
     [SerializeField] public int eventBuildCount=0;
@@ -21,8 +21,9 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
+         Time.timeScale = 0f;
         buildManager.ClearInfo();
-        gameOverText.SetActive(true);
+        gameOverUI.SetActive(true);
     }
 
     public void EndTurn()
@@ -31,20 +32,22 @@ public class GameManager : MonoBehaviour
         eventBuildCount = PlayerStats.buildNumber;
         eventRoadCount = PlayerStats.roadNumber;
 
-        if(turnNum == 5 && eventBuildCount >= 10 && PlayerStats.scoreFactor !=1 )
+        if(turnNum == 5 && eventBuildCount >= 10 && PlayerStats.scoreFactor !=1 && eventIsActive!=1)
         {
+            eventIsActive = 1;
             eventUINoRoads.SetActive(true);
             turnNum = 0;
-            eventNum++;
+            
             eventBuildCount = 0;
             eventRoadCount = 0;
         }
 
         if (turnNum == 5  && PlayerStats.scoreFactor != 1 && eventRoadCount >=5)
         {
+            eventIsActive = 1;
             eventUINoHouses.SetActive(true);
             turnNum = 0;
-            eventNum++;
+            
             eventBuildCount = 0;
             eventRoadCount = 0;
         }
@@ -53,12 +56,14 @@ public class GameManager : MonoBehaviour
         {
             if(turnNum==5 && eventBuildCount>=5)
             {
+                eventIsActive = 0;
                 questHouse.SetActive(false);
                 PlayerStats.money += 10000;
                 turnNum = 0;
             }
             else if(turnNum == 5 && eventBuildCount < 5)
             {
+                eventIsActive = 0;
                 questHouse.SetActive(false);
                 PlayerStats.money -= 5000;
                 turnNum = 0;
@@ -69,12 +74,14 @@ public class GameManager : MonoBehaviour
         {
             if (turnNum == 5 && eventRoadCount >= 5)
             {
+                eventIsActive = 0;
                 questItem.SetActive(false);
                 PlayerStats.money += 10000;
                 turnNum = 0;
             }
             else if (turnNum == 5 && eventRoadCount < 5)
             {
+                eventIsActive = 0;
                 questItem.SetActive(false);
                 PlayerStats.money -= 5000;
                 turnNum = 0;
@@ -85,6 +92,7 @@ public class GameManager : MonoBehaviour
         {
             if (turnNum == 5 )
             {
+                eventIsActive = 0;
                 quest.SetActive(false);
                 PlayerStats.money -= 10000;
                 turnNum = 0;
