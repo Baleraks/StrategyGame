@@ -702,8 +702,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1537771448}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 1537771446}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
         m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
@@ -3861,6 +3861,7 @@ GameObject:
   - component: {fileID: 1537771445}
   - component: {fileID: 1537771447}
   - component: {fileID: 1537771448}
+  - component: {fileID: 1537771446}
   m_Layer: 0
   m_Name: GameMenager
   m_TagString: Untagged
@@ -3941,6 +3942,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startMoney: 1000000
+--- !u!114 &1537771446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537771441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36997481c8d39c44bb1cd5bc895d39e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildManager: {fileID: 1744177872}
+  scoreText: {fileID: 101591368}
+  ui: {fileID: 2141837444}
 --- !u!114 &1537771447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4541,9 +4557,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1537771448}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: Retry
+      - m_Target: {fileID: 1537771446}
+        m_TargetAssemblyTypeName: GameOver, Assembly-CSharp
+        m_MethodName: Menu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5561,7 +5577,6 @@ GameObject:
   - component: {fileID: 2141837445}
   - component: {fileID: 2141837447}
   - component: {fileID: 2141837446}
-  - component: {fileID: 2141837448}
   m_Layer: 5
   m_Name: GameOverPanel
   m_TagString: Untagged
@@ -5630,16 +5645,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2141837444}
   m_CullTransparentMesh: 1
---- !u!114 &2141837448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2141837444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36997481c8d39c44bb1cd5bc895d39e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scoreText: {fileID: 101591368}

@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    public BuildManager buildManager;
     public Text scoreText;
+    public GameObject ui;
 
     void OnEnable()
     {
@@ -15,12 +17,27 @@ public class GameOver : MonoBehaviour
 
     public void Retry()
     {
-        Time.timeScale = 1f;
+        Toggle();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
     public void Menu ()
     {
-        Time.timeScale = 1f;
+       
         Debug.Log("Go to Menu");
+    }
+    public void Toggle()
+    {
+        buildManager.ClearInfo();
+        ui.SetActive(!ui.activeSelf);
+
+        if (ui.activeSelf)
+        {
+            Time.timeScale = 0f;
+
+        }
+        else
+        {
+            Time.timeScale = 1f;
+        }
     }
 }

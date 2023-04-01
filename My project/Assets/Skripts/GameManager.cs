@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-         Time.timeScale = 0f;
+       
         buildManager.ClearInfo();
         gameOverUI.SetActive(true);
     }
@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
             eventRoadCount = 0;
         }
 
-        if (turnNum == 5  && PlayerStats.scoreFactor != 1 && eventRoadCount >=5)
+        if (turnNum == 5  && PlayerStats.scoreFactor != 1 && eventRoadCount >=5 && eventIsActive != 1)
         {
             eventIsActive = 1;
             eventUINoHouses.SetActive(true);
@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
         if (PlayerStats.scoreFactor <= 1)
         {
             GameOver();
+           
         }
         PlayerStats.scoreFactor = 1;
         PlayerStats.money += moneyMultiplier * PlayerStats.buildNumber;
