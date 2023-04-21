@@ -777,16 +777,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 181068057}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 455987400}
-  m_RootOrder: 1
+  m_Father: {fileID: 760570831}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000015259, y: 236}
+  m_AnchoredPosition: {x: 0.000015259, y: 138.87402}
   m_SizeDelta: {x: 658.8896, y: 136.1175}
   m_Pivot: {x: 0.5, y: 0.49999997}
 --- !u!114 &181068059
@@ -993,7 +993,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 558900122}
-  - {fileID: 181068058}
   - {fileID: 760570831}
   - {fileID: 1638156729}
   - {fileID: 620944931}
@@ -1542,6 +1541,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 562420625}
   m_CullTransparentMesh: 1
+--- !u!1 &575514378
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 575514380}
+  - component: {fileID: 575514379}
+  m_Layer: 0
+  m_Name: EventManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &575514379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575514378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51e9eeaee34110f4a901f2fe94c8ea2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quest: {fileID: 682562253}
+  ui: {fileID: 455987399}
+  questItem: {fileID: 1703121635}
+  questHouse: {fileID: 2043504631}
+  questText: {fileID: 760570832}
+  buttonText: {fileID: 1887917384}
+  consecText: {fileID: 1703121637}
+  eventproc: 0
+  eventproc2: 0
+--- !u!4 &575514380
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575514378}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1150.5917, y: 631.1443, z: -123.8866}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &620944930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,7 +1625,7 @@ RectTransform:
   m_Children:
   - {fileID: 1170014874}
   m_Father: {fileID: 455987400}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1625,7 +1676,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1537771447}
+      - m_Target: {fileID: 575514379}
         m_TargetAssemblyTypeName: Event, Assembly-CSharp
         m_MethodName: Bad
         m_Mode: 1
@@ -2033,9 +2084,10 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 181068058}
   m_Father: {fileID: 455987400}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2075,7 +2127,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You have built too many buildings, the inhabitants are starving
+  m_Text: 1
 --- !u!222 &760570833
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2632,7 +2684,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1537771447}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Event, Assembly-CSharp
         m_MethodName: Bad
         m_Mode: 1
@@ -3056,7 +3108,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1537771447}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Event, Assembly-CSharp
         m_MethodName: House
         m_Mode: 1
@@ -3557,7 +3609,6 @@ GameObject:
   - component: {fileID: 1537771442}
   - component: {fileID: 1537771444}
   - component: {fileID: 1537771445}
-  - component: {fileID: 1537771447}
   - component: {fileID: 1537771448}
   - component: {fileID: 1537771446}
   m_Layer: 0
@@ -3613,17 +3664,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverUI: {fileID: 2141837444}
-  turnNum: 0
-  eventIsActive: 0
   costMultiplier: 0.01
   moneyMultiplier: 4
-  eventBuildCount: 0
-  eventRoadCount: 0
   shop: {fileID: 74910748}
   mapManager: {fileID: 1751269887}
   buildManager: {fileID: 1744177872}
-  eventUINoRoads: {fileID: 455987399}
-  eventUINoHouses: {fileID: 481838472}
+  ev: {fileID: 575514379}
   quest: {fileID: 682562253}
   questItem: {fileID: 1703121635}
   questHouse: {fileID: 2043504631}
@@ -3655,23 +3701,6 @@ MonoBehaviour:
   buildManager: {fileID: 1744177872}
   scoreText: {fileID: 101591368}
   ui: {fileID: 2141837444}
---- !u!114 &1537771447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537771441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51e9eeaee34110f4a901f2fe94c8ea2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  quest: {fileID: 682562253}
-  ui: {fileID: 455987399}
-  uiHouse: {fileID: 481838472}
-  questItem: {fileID: 1703121635}
-  questHouse: {fileID: 2043504631}
 --- !u!114 &1537771448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4071,7 +4100,7 @@ RectTransform:
   m_Children:
   - {fileID: 1887917383}
   m_Father: {fileID: 455987400}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4122,7 +4151,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1537771447}
+      - m_Target: {fileID: 575514379}
         m_TargetAssemblyTypeName: Event, Assembly-CSharp
         m_MethodName: Good
         m_Mode: 1

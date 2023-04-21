@@ -4,20 +4,21 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] public GameObject gameOverUI;
-    [SerializeField] private int turnNum=1;
-    [SerializeField] private int eventIsActive = 0;
+    [SerializeField] public static int turnNum=1;
+    [SerializeField] public static int eventIsActive = 0;
     [SerializeField] private float costMultiplier;
     [SerializeField] public int moneyMultiplier;
-    [SerializeField] public int eventBuildCount=0;
-    [SerializeField] public int eventRoadCount = 0;
+    [SerializeField] public static int eventBuildCount=0;
+    [SerializeField] public static int eventRoadCount = 0;
     [SerializeField] private Shop shop;
     [SerializeField] private MapManager mapManager;
-    [SerializeField] private BuildManager buildManager;   
-    public GameObject eventUINoRoads;
-    public GameObject eventUINoHouses;
+    [SerializeField] private BuildManager buildManager;
+    public Event ev;
+  
     public GameObject quest;
     public GameObject questItem;
     public GameObject questHouse;
+   
 
     public void GameOver()
     {
@@ -32,72 +33,16 @@ public class GameManager : MonoBehaviour
         eventBuildCount = PlayerStats.buildNumber;
         eventRoadCount = PlayerStats.roadNumber;
 
-        if(turnNum == 5 && eventBuildCount >= 10 && PlayerStats.scoreFactor !=1 && eventIsActive!=1)
+        
+
+        if (turnNum == 5 && eventIsActive != 1)
         {
             eventIsActive = 1;
-            eventUINoRoads.SetActive(true);
+            ev.EventGenerator();
             turnNum = 0;
-            
-            eventBuildCount = 0;
-            eventRoadCount = 0;
         }
 
-        if (turnNum == 5  && PlayerStats.scoreFactor != 1 && eventRoadCount >=5 && eventIsActive != 1)
-        {
-            eventIsActive = 1;
-            eventUINoHouses.SetActive(true);
-            turnNum = 0;
-            
-            eventBuildCount = 0;
-            eventRoadCount = 0;
-        }
-
-        if (questHouse.activeSelf == true)
-        {
-            if(turnNum==5 && eventBuildCount>=5)
-            {
-                eventIsActive = 0;
-                questHouse.SetActive(false);
-                PlayerStats.money += 10000;
-                turnNum = 0;
-            }
-            else if(turnNum == 5 && eventBuildCount < 5)
-            {
-                eventIsActive = 0;
-                questHouse.SetActive(false);
-                PlayerStats.money -= 5000;
-                turnNum = 0;
-            }
-        }
-
-        if (questItem.activeSelf == true)
-        {
-            if (turnNum == 5 && eventRoadCount >= 5)
-            {
-                eventIsActive = 0;
-                questItem.SetActive(false);
-                PlayerStats.money += 10000;
-                turnNum = 0;
-            }
-            else if (turnNum == 5 && eventRoadCount < 5)
-            {
-                eventIsActive = 0;
-                questItem.SetActive(false);
-                PlayerStats.money -= 5000;
-                turnNum = 0;
-            }
-        }
-
-        if (quest.activeSelf == true)
-        {
-            if (turnNum == 5 )
-            {
-                eventIsActive = 0;
-                quest.SetActive(false);
-                PlayerStats.money -= 10000;
-                turnNum = 0;
-            }
-        }
+        ev.QuestConsec();
 
         int size = mapManager.Fields.GetLength(1);
         mapManager.used = new bool[size, size];
@@ -115,4 +60,6 @@ public class GameManager : MonoBehaviour
         shop.standardBuilding.cost = (int)(shop.standardBuilding.cost * PlayerStats.buildFactor);
         shop.Road.cost = (int)(shop.Road.cost * PlayerStats.buildFactor);
     }
+
+   
 }
