@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2555619226689483058}
   - component: {fileID: 7054032618074210783}
   - component: {fileID: -6387204832025892778}
+  - component: {fileID: 7860760567369872141}
   m_Layer: 0
   m_Name: Lake
   m_TagString: Lake
@@ -109,10 +110,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeColorGood: {r: 0.040049836, g: 0.15818614, b: 0.5660378, a: 0}
-  turret: {fileID: 0}
+  building: 0
+  Prefab: {fileID: 0}
   positionOffset: {x: 0, y: 0.5, z: 0}
   buildingInfo:
-    prefarb:
-    - {fileID: 0}
+    Object: {fileID: 0}
+    name: 0
     cost: 0
+    score: 0
+  playerStats: {fileID: 0}
   isUpgrated: 0
+--- !u!95 &7860760567369872141
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8082428900177239843}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d53c5b0fa3ee15e4bb7ee3368ecaca89, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

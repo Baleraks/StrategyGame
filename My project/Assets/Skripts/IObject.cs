@@ -4,12 +4,42 @@ using UnityEngine;
 public abstract class IObject : MonoBehaviour
 {
     public GameObject[] gameObjects;
+    public GameObject[] EfectObjects;
     public MapManager mapManager;
     public List<Field> Neighbours;
 
     public virtual GameObject SelfIndification(Field field)
     {
         return null;
+    }
+
+    public GameObject GetEffect(Field field)
+    {
+        PlayerStats.buildNumber++;
+        int prefSelect = 0;
+        switch (field.tag)
+        {
+            case "Lake":
+                {
+                    prefSelect = 1;
+                    break;
+                }
+            case "Grass":
+                {
+                    prefSelect = 2;
+                    break;
+                }
+            case "Mountain":
+                {
+                    prefSelect = 3;
+                    break;
+                }
+            default:
+                {
+                    break;
+                }
+        }
+        return EfectObjects[prefSelect];
     }
 
     public virtual Quaternion GetRotation()

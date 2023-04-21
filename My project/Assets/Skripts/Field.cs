@@ -61,8 +61,8 @@ public class Field : MonoBehaviour
 
     public void SetBuilding(BuildingInfo info)
     {
-        GameObject Prefab = (GameObject)Instantiate(info.Object.SelfIndification(transform.GetComponent<Field>()), GetBuildPosition(), info.Object.GetRotation());
-        this.Prefab = Prefab;
+        this.Prefab = (GameObject)Instantiate(info.Object.SelfIndification(transform.GetComponent<Field>()), GetBuildPosition(), info.Object.GetRotation());
+        Instantiate(info.Object.GetEffect(transform.GetComponent<Field>()), GetBuildPosition(), info.Object.GetRotation());
         buildingInfo = info;
         this.building = info.name;
     }

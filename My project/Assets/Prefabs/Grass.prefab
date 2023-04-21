@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3739361046613545941}
   - component: {fileID: 7603511331652719263}
   - component: {fileID: -8507548732627541024}
+  - component: {fileID: 6636601344856783579}
   m_Layer: 0
   m_Name: Grass
   m_TagString: Grass
@@ -109,12 +110,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeColorGood: {r: 0.01561943, g: 0.3679245, b: 0.0701428, a: 0}
-  turret: {fileID: 0}
+  building: 0
+  Prefab: {fileID: 0}
   positionOffset: {x: 0, y: 0.5, z: 0}
   buildingInfo:
-    prefarb:
-    - {fileID: 0}
+    Object: {fileID: 0}
+    name: 0
     cost: 0
     score: 0
   playerStats: {fileID: 0}
   isUpgrated: 0
+--- !u!95 &6636601344856783579
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7165776191007120205}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 901b29aa4547702479aba16501df9dcf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

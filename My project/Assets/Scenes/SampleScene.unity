@@ -4469,6 +4469,11 @@ MonoBehaviour:
   - {fileID: 5831329994122756774, guid: fd873a5761a270a4e99fd96313e11435, type: 3}
   - {fileID: 7548575517068085991, guid: 3d5acbc2546c88745a9c38adcb654ac2, type: 3}
   - {fileID: 5831329994122756774, guid: 85bf2a43faa1ad54ca72f86dd0a24487, type: 3}
+  EfectObjects:
+  - {fileID: 5821177754726554972, guid: 59b913b53553bcc448e022d7938a62fd, type: 3}
+  - {fileID: 5821177754726554972, guid: 7d136dda37ba65b42bd8fee86e4f88de, type: 3}
+  - {fileID: 5821177754726554972, guid: 2d8b274d0035fe043862e1b9d3a7f05c, type: 3}
+  - {fileID: 5821177754726554972, guid: cb4b5f93b109bd945b834b9862625217, type: 3}
   mapManager: {fileID: 1751269887}
   Neighbours: []
   ObjectPos: 
@@ -4489,6 +4494,11 @@ MonoBehaviour:
   - {fileID: 7532038294446082750, guid: 67a72cc1d2d11dd478f74d152e23ec03, type: 3}
   - {fileID: 370636374218412969, guid: 181cfdb785efa284ab4e05ba5380f1bc, type: 3}
   - {fileID: 7209946669367357960, guid: 9a3445b83995c3649bef0c2c8a022000, type: 3}
+  EfectObjects:
+  - {fileID: 5821177754726554972, guid: 59b913b53553bcc448e022d7938a62fd, type: 3}
+  - {fileID: 5821177754726554972, guid: 7d136dda37ba65b42bd8fee86e4f88de, type: 3}
+  - {fileID: 5821177754726554972, guid: 2d8b274d0035fe043862e1b9d3a7f05c, type: 3}
+  - {fileID: 5821177754726554972, guid: cb4b5f93b109bd945b834b9862625217, type: 3}
   mapManager: {fileID: 1751269887}
   Neighbours: []
 --- !u!224 &1744177875
