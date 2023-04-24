@@ -1,7 +1,4 @@
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Drawing;
-using UnityEditorInternal.VersionControl;
 using UnityEngine;
 
 public class Road : IObject
