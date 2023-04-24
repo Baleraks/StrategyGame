@@ -4,6 +4,7 @@ using System.Security.Cryptography.X509Certificates;
 
 public class PauseMenu : MonoBehaviour
 {
+    public SceneFader sceneFader;
     public GameObject ui;
     public BuildManager buildManager;
 
@@ -39,6 +40,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Menu()
     {
-        SceneManager.LoadScene("MainMenu");
+        Toggle();
+        sceneFader.FadeTo("MainMenu");
     }
 }

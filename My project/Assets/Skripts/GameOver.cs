@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
+    public SceneFader sceneFader;
     public BuildManager buildManager;
     public Text scoreText;
     public GameObject ui;
@@ -22,7 +23,7 @@ public class GameOver : MonoBehaviour
     }
     public void Menu ()
     {
-        SceneManager.LoadScene("MainMenu");
+        sceneFader.FadeTo("MainMenu");
 
     }
     public void Toggle()
