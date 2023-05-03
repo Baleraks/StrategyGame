@@ -11,6 +11,9 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] public static float buildFactor;
     //количество зданий
     public static int buildNumber;
+    public static int rockNumber;
+    public static int lakeNumber;
+    public static int grassNumber;
     //количество дорог
     public static int roadNumber;
     //количество связей здание -> дорога -> замок

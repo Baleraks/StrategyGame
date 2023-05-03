@@ -8,40 +8,35 @@ public class Event : MonoBehaviour
     public GameObject quest;
     public GameObject ui;
     public GameObject questItem;
-    public GameObject questHouse;
     public Text questText;
     public Text buttonText;
+    public Text buttonText2;
     public Text consecText;
     static System.Random rand = new System.Random();
-    public static int eventPriorityOne = 5 + rand.Next(1,5);
-    public static int eventPriorityTwo = 5 + rand.Next(1,5);
+    public static int eventPriorityOne = 5 + rand.Next(1, 5);
+    public static int eventPriorityTwo = rand.Next(1, 5) + PlayerStats.lakeNumber;
+    public static int eventPriorityThree = rand.Next(1, 5) + PlayerStats.rockNumber;
     public bool eventproc = false;
     public bool eventproc2 = false;
-   
+    public bool eventproc3 = false;
+    public bool eventproc4 = false;
+
+
+
+
 
     public void Good()
     {
         ui.SetActive(false);
         questItem.SetActive(true);
-        if(eventproc)
-        {
-            buttonText.text = "Build houses to provide residents with houses.";
-            consecText.text = " You have 5 turns to build 10 houses.";
-        }
 
-        if(eventproc2)
-        {
-            buttonText.text = "You have built too many roads, your residents have nowhere to live.";
-            consecText.text = "You have 5 turns to build 5 roads.";
-        }
-        
     }
 
-    public  void Bad()
+    public void Bad()
     {
         ui.SetActive(false);
         quest.SetActive(true);
-       
+
     }
 
     public void mainEvent()
@@ -49,84 +44,143 @@ public class Event : MonoBehaviour
         ui.SetActive(true);
         GameManager.eventBuildCount = 0;
         GameManager.eventRoadCount = 0;
+        PlayerStats.grassNumber = 0;
     }
 
-    public  void EventGenerator()
+    public void EventGenerator()
     {
-        if(eventPriorityOne>eventPriorityTwo)
+        if (GameManager.eventRoadCount >= 7)
         {
             mainEvent();
-            questText.text = "You have built too many roads, your residents have nowhere to live.";
+            buttonText.text = "It's horrible";
+            buttonText2.text = "It's horrible";
+            consecText.text = " You have cost multiplier increased for 5 turns";
+            questText.text = "You have built too many roads,plague in your settlement";
             eventPriorityOne = 5;
             eventproc = true;
             eventproc2 = false;
+            eventproc3 = false;
 
         }
 
-        if (eventPriorityOne == eventPriorityTwo)
-        {
-              eventPriorityOne += rand.Next(1, 5);
-              eventPriorityTwo += rand.Next(1, 5);
-        }
-
-        if (eventPriorityOne < eventPriorityTwo)
+        if (GameManager.eventBuildCount > 7)
         {
             mainEvent();
-            questText.text = "You have built too many buildings, the inhabitants are starving";
+            questText.text = "There was a disaster, our food was stolen by bandits, our settlement is starving.";
+            buttonText.text = "I try to fix it";
+            consecText.text = "You have 5 turns to build 5 farms on grass";
             eventPriorityTwo = 5;
             eventproc2 = true;
             eventproc = false;
+            eventproc3 = false;
+        }
+        if (PlayerStats.rockNumber > 3 && eventPriorityThree >= 5)
+        {
+            mainEvent();
+            buttonText.text = "Okay";
+            buttonText2.text = "Nice";
+            consecText.text = "You get 1000 gold coins";
+            questText.text = "Residents found gold in one of the mines, you got money.";
+            eventPriorityThree = 5;
+            eventproc3 = true;
+            eventproc = false;
+            eventproc2 = false;
+            PlayerStats.rockNumber = 0;
+        }
 
+        if (PlayerStats.lakeNumber > 3 && eventPriorityTwo >= 5)
+        {
+            mainEvent();
+            buttonText.text = "Okay";
+            buttonText2.text = "Nice";
+            consecText.text = "You get more money at the end of your turn";
+            questText.text = "Due to the large number of settlements near the water, the inhabitants began whaling. Now your buldings are more effective";
+            eventPriorityThree = 5;
+            eventproc4 = true;
+            eventproc = false;
+            eventproc2 = false;
+            eventproc3 = false;
+            PlayerStats.lakeNumber = 0;
         }
 
     }
-
     public void QuestConsec()
     {
-        if (questHouse.activeSelf == true && eventproc)
+        if (questItem.activeSelf == true && eventproc)
         {
-            if (GameManager.turnNum == 5 && GameManager.eventBuildCount >= 5)
-            {
-                GameManager.eventIsActive = 0;
-                questHouse.SetActive(false);
-                PlayerStats.money += 10000;
-                GameManager.turnNum = 0;
-            }
-            else if (GameManager.turnNum == 5 && GameManager.eventBuildCount < 5)
-            {
-                GameManager.eventIsActive = 0;
-                questHouse.SetActive(false);
-                PlayerStats.money -= 5000;
-                GameManager.turnNum = 0;
-            }
-        }
-
-        if (questHouse.activeSelf == true && eventproc2)
-        {
-            if (GameManager.turnNum == 5 && GameManager.eventRoadCount >= 5)
-            {
-                GameManager.eventIsActive = 0;
-                questHouse.SetActive(false);
-                PlayerStats.money += 10000;
-                GameManager.turnNum = 0;
-            }
-            else if (GameManager.turnNum == 5 && GameManager.eventRoadCount < 5)
+            if (GameManager.eventRoadCount >= 5)
             {
                 GameManager.eventIsActive = 0;
                 questItem.SetActive(false);
-                PlayerStats.money -= 5000;
+                GameManager.costMultiplier = 0.05f;
                 GameManager.turnNum = 0;
             }
-        }
 
-        if (quest.activeSelf == true)
-        {
-            if (GameManager.turnNum == 5)
+
+            if (questItem.activeSelf == true && eventproc2)
+            {
+                if (PlayerStats.grassNumber >= 5)
+                {
+                    GameManager.eventIsActive = 0;
+                    questItem.SetActive(false);
+                    PlayerStats.money += 1000;
+                    GameManager.turnNum = 0;
+                }
+                else if (GameManager.eventBuildCount < 5)
+                {
+                    GameManager.eventIsActive = 0;
+                    questItem.SetActive(false);
+                    PlayerStats.money -= 500;
+                    GameManager.turnNum = 0;
+                }
+            }
+            if (questItem.activeSelf == true && eventproc3)
+            {
+                GameManager.eventIsActive = 0;
+                questItem.SetActive(false);
+                PlayerStats.money += 1000;
+            }
+
+            if (questItem.activeSelf == true && eventproc4)
+            {
+                GameManager.eventIsActive = 0;
+                questItem.SetActive(false);
+                GameManager.moneyMultiplier = 6;
+            }
+
+
+            //cringe
+            if (quest.activeSelf == true)
+            {
+                if (GameManager.turnNum == 5)
+                {
+                    GameManager.eventIsActive = 0;
+                    quest.SetActive(false);
+                    PlayerStats.money -= 1000;
+                    GameManager.turnNum = 0;
+                }
+            }
+
+            if (quest.activeSelf == true && eventproc3)
             {
                 GameManager.eventIsActive = 0;
                 quest.SetActive(false);
-                PlayerStats.money -= 10000;
+                PlayerStats.money += 1000;
                 GameManager.turnNum = 0;
+            }
+            if (quest.activeSelf == true && eventproc)
+            {
+                GameManager.eventIsActive = 0;
+                quest.SetActive(false);
+                GameManager.costMultiplier = 0.05f;
+                GameManager.turnNum = 0;
+
+            }
+            if (quest.activeSelf == true && eventproc4)
+            {
+                GameManager.eventIsActive = 0;
+                questItem.SetActive(false);
+                GameManager.moneyMultiplier = 6;
             }
         }
     }

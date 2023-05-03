@@ -6,8 +6,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject gameOverUI;
     [SerializeField] public static int turnNum=1;
     [SerializeField] public static int eventIsActive = 0;
-    [SerializeField] private float costMultiplier;
-    [SerializeField] public int moneyMultiplier;
+    [SerializeField] public static float costMultiplier;
+    [SerializeField] public static int moneyMultiplier;
     [SerializeField] public static int eventBuildCount=0;
     [SerializeField] public static int eventRoadCount = 0;
     [SerializeField] private Shop shop;
@@ -18,8 +18,8 @@ public class GameManager : MonoBehaviour
     public GameObject quest;
     public GameObject questItem;
     public GameObject questHouse;
-   
 
+    
     public void GameOver()
     {
        
@@ -33,16 +33,20 @@ public class GameManager : MonoBehaviour
         eventBuildCount = PlayerStats.buildNumber;
         eventRoadCount = PlayerStats.roadNumber;
 
-        
+
 
         if (turnNum == 5 && eventIsActive != 1)
         {
             eventIsActive = 1;
             ev.EventGenerator();
             turnNum = 0;
+            costMultiplier = 0.01f;
+            moneyMultiplier = 4;
         }
 
         ev.QuestConsec();
+      
+
 
         int size = mapManager.Fields.GetLength(1);
         mapManager.used = new bool[size, size];

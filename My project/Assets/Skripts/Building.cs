@@ -10,16 +10,19 @@ public class Building : IObject
         {
             case "Lake":
                 {
+                    PlayerStats.lakeNumber++;
                     prefSelect = 1;
                     break;
                 }
             case "Grass":
                 {
+                    PlayerStats.grassNumber++;
                     prefSelect = 2;
                     break;
                 }
             case "Mountain":
                 {
+                    PlayerStats.rockNumber++;
                     prefSelect = 3;
                     break;
                 }
