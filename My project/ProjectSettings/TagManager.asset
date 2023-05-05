@@ -8,6 +8,7 @@ TagManager:
   - Lake
   - Grass
   - Mountain
+  - BGSound
   layers:
   - Default
   - TransparentFX

@@ -145,7 +145,7 @@ public class Event : MonoBehaviour
             {
                 GameManager.eventIsActive = 0;
                 questItem.SetActive(false);
-                GameManager.moneyMultiplier = 6;
+                PlayerStats.moneyMultiplier = 6;
             }
 
 
@@ -180,7 +180,7 @@ public class Event : MonoBehaviour
             {
                 GameManager.eventIsActive = 0;
                 questItem.SetActive(false);
-                GameManager.moneyMultiplier = 6;
+                PlayerStats.moneyMultiplier = 6;
             }
         }
     }

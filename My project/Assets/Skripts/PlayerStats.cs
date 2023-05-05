@@ -9,6 +9,7 @@ public class PlayerStats : MonoBehaviour
     public int startMoney;
     //множитель деняг
     [SerializeField] public static float buildFactor;
+    [SerializeField] public static int moneyMultiplier;
     //количество зданий
     public static int buildNumber;
     public static int rockNumber;
@@ -23,6 +24,7 @@ public class PlayerStats : MonoBehaviour
 
     private void Start()
     {
+        moneyMultiplier = 5;
         buildFactor = 1.0f; 
         scoreFactor = 1;
         money = startMoney;

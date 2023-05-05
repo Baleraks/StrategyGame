@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7133676882618607456}
   - component: {fileID: 7379385485604495323}
   - component: {fileID: 3967441754207120034}
-  - component: {fileID: 4017274636407985359}
+  - component: {fileID: 7404047192608604147}
   m_Layer: 0
   m_Name: Field
   m_TagString: Field
@@ -120,7 +120,7 @@ MonoBehaviour:
     score: 0
   playerStats: {fileID: 0}
   isUpgrated: 0
---- !u!95 &4017274636407985359
+--- !u!95 &7404047192608604147
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
