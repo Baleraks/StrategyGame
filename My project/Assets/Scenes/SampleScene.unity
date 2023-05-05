@@ -3235,7 +3235,7 @@ MonoBehaviour:
   - {fileID: 7165776191007120205, guid: bef4d0eca373cc3458ccdea98b5335f8, type: 3}
   - {fileID: 8082428900177239843, guid: 5d6871ea6aa161c44b76ea41f4f3868c, type: 3}
   - {fileID: 4569017683256880896, guid: 871f3db347b56f74f88bb35a76d5eeb8, type: 3}
-  castle: {fileID: 8069295981132987105, guid: 9f8035e39b12af449bc85fd0507176a9, type: 3}
+  castle: {fileID: 6193496960055487288, guid: 0e45434c008672b49af252d4bba3de20, type: 3}
   mapManager: {fileID: 1751269887}
 --- !u!4 &1537771443
 Transform:
@@ -4084,7 +4084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameObjects:
-  - {fileID: 6706483720002028869, guid: db74c2b5f73cea246ac14e04e25b65d6, type: 3}
+  - {fileID: 358077925026711830, guid: 27904a6ecce9f8a4fa809d59aa63f4fd, type: 3}
   - {fileID: 7532038294446082750, guid: 67a72cc1d2d11dd478f74d152e23ec03, type: 3}
   - {fileID: 370636374218412969, guid: 181cfdb785efa284ab4e05ba5380f1bc, type: 3}
   - {fileID: 7209946669367357960, guid: 9a3445b83995c3649bef0c2c8a022000, type: 3}
