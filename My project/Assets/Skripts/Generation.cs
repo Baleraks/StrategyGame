@@ -6,6 +6,7 @@ public class Generation : MonoBehaviour
     [SerializeField] private GameObject[] objects;
     [SerializeField] private GameObject castle;
     [SerializeField] private MapManager mapManager;
+    [SerializeField] private int expentionCoast;
     private int edgeX = -2;
     private int edgeZ = -2;
     private int fieldeSize = 5;
@@ -13,6 +14,7 @@ public class Generation : MonoBehaviour
     private System.Random rand = new System.Random();
     private Field startField;
     private BuildManager buildManager;
+
 
     void Start()
     {
@@ -57,6 +59,7 @@ public class Generation : MonoBehaviour
     public void Expansion()
     {
         GameObject[,] buf = new GameObject[fieldeSize, fieldeSize];
+        PlayerStats.money -= expentionCoast;
         int indexToSpawn;
         var indexX = edgeX;
         var indexZ = edgeZ;

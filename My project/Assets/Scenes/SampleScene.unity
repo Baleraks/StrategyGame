@@ -3364,6 +3364,7 @@ MonoBehaviour:
   - {fileID: 4569017683256880896, guid: 871f3db347b56f74f88bb35a76d5eeb8, type: 3}
   castle: {fileID: 6193496960055487288, guid: 0e45434c008672b49af252d4bba3de20, type: 3}
   mapManager: {fileID: 1751269887}
+  expentionCoast: 10
 --- !u!4 &1537771443
 Transform:
   m_ObjectHideFlags: 0
@@ -3410,7 +3411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b43322b048f7742a1449040a6fb8cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 100
+  startMoney: 25
 --- !u!114 &1537771446
 MonoBehaviour:
   m_ObjectHideFlags: 0
