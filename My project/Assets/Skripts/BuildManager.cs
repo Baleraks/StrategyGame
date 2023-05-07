@@ -24,33 +24,14 @@ public class BuildManager : MonoBehaviour
         instance = this;
     }
 
-    public void SelectNode(Field fielde)
-    {
-        if (selectedFielde == fielde)
-        {
-            DiselectNode();
-            return;
-        }
-        selectedFielde = fielde;
-        ClearInfo();
-        //nodeUI.SetTarget(node);
-    }
-
     public void ClearInfo()
     {
         BuildingToBuild = null;
     }
 
-    public void DiselectNode()
-    {
-        selectedFielde = null;
-        //nodeUI.Hide();
-    }
-
     public void SelectTurretToBuild(BuildingInfo building)
     {
         BuildingToBuild = building;
-        DiselectNode();
     }
 }
 

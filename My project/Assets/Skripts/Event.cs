@@ -20,13 +20,20 @@ public class Event : MonoBehaviour
     public bool eventproc2 = false;
     public bool eventproc3 = false;
     public bool eventproc4 = false;
+    private AudioSource ButtonClick;
 
+    private void Start()
+    {
+        GameObject[] soundObj = GameObject.FindGameObjectsWithTag("ButtonClickSound");
+        ButtonClick = soundObj[0].GetComponent<AudioSource>();
+    }
 
 
 
 
     public void Good()
     {
+        ButtonClick.Play();
         ui.SetActive(false);
         questItem.SetActive(true);
 
@@ -34,6 +41,7 @@ public class Event : MonoBehaviour
 
     public void Bad()
     {
+        ButtonClick.Play();
         ui.SetActive(false);
         quest.SetActive(true);
 

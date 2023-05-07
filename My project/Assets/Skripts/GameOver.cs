@@ -10,6 +10,13 @@ public class GameOver : MonoBehaviour
     public BuildManager buildManager;
     public Text scoreText;
     public GameObject ui;
+    private AudioSource ButtonClick;
+
+    private void Start()
+    {
+        GameObject[] soundObj = GameObject.FindGameObjectsWithTag("ButtonClickSound");
+        ButtonClick = soundObj[0].GetComponent<AudioSource>();
+    }
 
     void OnEnable()
     {
@@ -18,14 +25,17 @@ public class GameOver : MonoBehaviour
 
     public void Retry()
     {
+        ButtonClick.Play();
         Toggle();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
     public void Menu ()
     {
+        ButtonClick.Play();
         sceneFader.FadeTo("MainMenu");
-
     }
+
     public void Toggle()
     {
         buildManager.ClearInfo();

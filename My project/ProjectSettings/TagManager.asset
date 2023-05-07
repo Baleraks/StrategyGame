@@ -9,6 +9,9 @@ TagManager:
   - Grass
   - Mountain
   - BGSound
+  - ButtonClickSound
+  - ButtonSound
+  - BuildSound
   layers:
   - Default
   - TransparentFX

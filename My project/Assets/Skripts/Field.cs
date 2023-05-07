@@ -12,6 +12,13 @@ public class Field : MonoBehaviour
     public PlayerStats playerStats;
     public bool isUpgrated = false;
     public (int x, int y) mapPosition;
+    public AudioSource BuildSound;
+
+    private void GetButtonClickSound()
+    {
+        GameObject[] soundObj = GameObject.FindGameObjectsWithTag("BuildSound");
+        BuildSound = soundObj[0].GetComponent<AudioSource>();
+    }
 
     public Vector3 GetBuildPosition()
     {
@@ -24,15 +31,7 @@ public class Field : MonoBehaviour
         mainColor = rend.material.color;
         buildManager = BuildManager.instance;
         tag = this.gameObject.tag;
-    }
-
-    void OnMouseEnter()
-    {
-        if ( buildManager.GetTurretToBuild() == null)
-        {
-            return;
-        }
-        GetComponent<Renderer>().material.color = changeColorGood;
+        GetButtonClickSound();
     }
 
     void OnMouseDown()
@@ -51,6 +50,7 @@ public class Field : MonoBehaviour
             Debug.Log("NOT ENOUGH MONEY");
             return;
         }
+        BuildSound.Play();
         PlayerStats.scoreFactor++;
         SetBuilding(info);
         info.Object.NeighboursUpdait(transform.GetComponent<Field>());
@@ -64,11 +64,6 @@ public class Field : MonoBehaviour
         Instantiate(info.Object.GetEffect(transform.GetComponent<Field>()), GetBuildPosition(), info.Object.GetRotation());
         buildingInfo = info;
         this.building = info.name;
-    }
-
-    void OnMouseExit()
-    {
-        GetComponent<Renderer>().material.color = mainColor;
     }
 }
 

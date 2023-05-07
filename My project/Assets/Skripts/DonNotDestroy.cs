@@ -8,15 +8,10 @@ public class DonNotDestroy : MonoBehaviour
     private void Awake()
     {
         GameObject[] musicObj = GameObject.FindGameObjectsWithTag("BGSound");
-        //GameObject[] soundObj = GameObject.FindGameObjectsWithTag("SoundSource");
         if (musicObj.Length > 1)
         {
              GayMagick();
         }
-        //else if (soundObj.Length > 1)
-        //{
-        //    Destroy(this.gameObject);
-        //}
         DontDestroyOnLoad(this.gameObject);
     }
 

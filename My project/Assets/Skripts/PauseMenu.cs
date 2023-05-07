@@ -7,6 +7,13 @@ public class PauseMenu : MonoBehaviour
     public SceneFader sceneFader;
     public GameObject ui;
     public BuildManager buildManager;
+    private AudioSource ButtonClick;
+
+    private void Start()
+    {
+        GameObject[] soundObj = GameObject.FindGameObjectsWithTag("ButtonClickSound");
+        ButtonClick = soundObj[0].GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -18,6 +25,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Toggle()
     {
+        ButtonClick.Play();
         buildManager.ClearInfo();
         ui.SetActive(!ui.activeSelf);
 

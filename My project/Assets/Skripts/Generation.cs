@@ -14,10 +14,17 @@ public class Generation : MonoBehaviour
     private System.Random rand = new System.Random();
     private Field startField;
     private BuildManager buildManager;
+    private AudioSource ButtonClick;
 
+    private void GetButtonClickSound()
+    {
+        GameObject[] soundObj = GameObject.FindGameObjectsWithTag("ButtonClickSound");
+        ButtonClick = soundObj[0].GetComponent<AudioSource>();
+    }
 
     void Start()
     {
+        GetButtonClickSound();
         buildManager = BuildManager.instance;
         mapManager.Fields = new GameObject[fieldeSize, fieldeSize];
         int indexToSpawn;
@@ -58,6 +65,11 @@ public class Generation : MonoBehaviour
 
     public void Expansion()
     {
+        if(PlayerStats.money < expentionCoast)
+        {
+            return;
+        }
+        ButtonClick.Play();
         GameObject[,] buf = new GameObject[fieldeSize, fieldeSize];
         PlayerStats.money -= expentionCoast;
         int indexToSpawn;

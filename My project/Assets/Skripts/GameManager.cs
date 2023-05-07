@@ -16,9 +16,16 @@ public class GameManager : MonoBehaviour
     public GameObject quest;
     public GameObject questItem;
     public GameObject questHouse;
+    private AudioSource ButtonClick;
 
+    private void GetButtonClickSound()
+    {
+        GameObject[] soundObj = GameObject.FindGameObjectsWithTag("ButtonClickSound");
+        ButtonClick = soundObj[0].GetComponent<AudioSource>();
+    }
     private void Start()
     {
+        GetButtonClickSound();
         DonNotDestroy musicObj = FindObjectOfType<DonNotDestroy>();
         musicObj.GayMagick();
     }
@@ -32,6 +39,7 @@ public class GameManager : MonoBehaviour
 
     public void EndTurn()
     {
+        ButtonClick.Play();
         turnNum++;
         eventBuildCount = PlayerStats.buildNumber;
         eventRoadCount = PlayerStats.roadNumber;

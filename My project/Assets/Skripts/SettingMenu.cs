@@ -8,9 +8,18 @@ public class SettingMenu : MonoBehaviour
     public SceneFader sceneFader;
     Resolution[] resolutions;
     public Dropdown resolutionDropdown;
+    private AudioSource ButtonClick;
+
+    private void GetButtonClickSound()
+    {
+        GameObject[] soundObj = GameObject.FindGameObjectsWithTag("ButtonClickSound");
+        ButtonClick = soundObj[0].GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
+        GetButtonClickSound();
+
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
 
@@ -35,16 +44,19 @@ public class SettingMenu : MonoBehaviour
 
     public void SetResolution (int resolutionIndex)
     {
+        ButtonClick.Play();
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
     public void SetFullscreen (bool isFullscreen)
     {
+        ButtonClick.Play();
         Screen.fullScreen = isFullscreen;
     }
 
     public void Close()
     {
         sceneFader.FadeTo("MainMenu");
+        ButtonClick.Play();
     }
 }
