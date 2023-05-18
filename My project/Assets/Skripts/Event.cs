@@ -157,7 +157,6 @@ public class Event : MonoBehaviour
             }
 
 
-            //cringe
             if (quest.activeSelf == true)
             {
                 if (GameManager.turnNum == 5)

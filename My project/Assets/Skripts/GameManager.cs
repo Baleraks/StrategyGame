@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-       
         buildManager.ClearInfo();
         gameOverUI.SetActive(true);
     }
