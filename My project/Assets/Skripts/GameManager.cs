@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
         GetButtonClickSound();
         DonNotDestroy musicObj = FindObjectOfType<DonNotDestroy>();
-        musicObj.GayMagick();
+        musicObj.Destroy();
     }
 
     public void GameOver()

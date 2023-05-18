@@ -123,7 +123,7 @@ public class Event : MonoBehaviour
                 GameManager.costMultiplier = 0.05f;
                 GameManager.turnNum = 0;
             }
-
+        }
 
             if (questItem.activeSelf == true && eventproc2)
             {
@@ -190,6 +190,6 @@ public class Event : MonoBehaviour
                 questItem.SetActive(false);
                 PlayerStats.moneyMultiplier = 6;
             }
-        }
+        
     }
 }

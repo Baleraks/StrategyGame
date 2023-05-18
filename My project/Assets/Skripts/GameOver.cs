@@ -18,7 +18,7 @@ public class GameOver : MonoBehaviour
         ButtonClick = soundObj[0].GetComponent<AudioSource>();
     }
 
-    void OnEnable()
+    void Update()
     {
         scoreText.text = PlayerStats.score.ToString();
     }
